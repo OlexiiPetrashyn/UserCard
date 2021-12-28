@@ -26,7 +26,7 @@ h2, h3{
 }
 .cards-block {
   display:flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -34,12 +34,15 @@ h2, h3{
 .cards-block li{
   width:290px;
   min-width:180px;
-  height: 510px;
   background: var(--card-bg);
   border-radius:18px;
   box-shadow: 0 0 30px rgba(0,0,0,0.1);
   overflow: hidden;
   margin:10px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
 .cards-block li p,
 .usr-online-status{
@@ -49,7 +52,6 @@ h2, h3{
   position:relative;
 }
 section.usr-card-header,
-section.usr-card-info,
 section.usr-contacts{
   display: flex;
   justify-content: center;
@@ -58,8 +60,20 @@ section.usr-contacts{
   position:relative;
   text-align: center;
 }
+section.usr-card-info{
+flex-grow: 1;
+display: flex;
+justify-content: flex-start;
+align-content: center;
+flex-wrap: wrap;
+position: relative;
+text-align: center;
+flex-direction: column;
+}
+
 .usr-card-header{
     background: var(--card-header-bg);
+    width:100%;
 }
 .usr-card-header span{
   width:110px;
@@ -122,12 +136,12 @@ section.usr-contacts{
   color: var(--description-font-color);
 }
 .usr-card-header h4:before{
-  font-family:  'Font Awesome\ 5 Free';
-  content:'\f153';
-  position:absolute;
-  top: 1px;
-  left: -10px;
-  font-size: 12px;
+  font-family: 'Font Awesome\ 5 Free';
+  content: '\f153';
+  position: relative;
+  top: -1px;
+  left: -3px;
+  font-size: 11px;
 }
 .usr-card-info h3{
   padding: 5px 0;
@@ -136,24 +150,20 @@ section.usr-contacts{
   font-weight:bold;
   position:relative;
 }
-.usr-info{
-  height:40px;
-}
+
 .usr-location:before{
-  font-family:  'Font Awesome\ 5 Free';
-  content:"\f3c5";
-  position:absolute;
-  top:1px;
-  font-size:12px;
-  left:-15px;
+  font-family: 'Font Awesome\ 5 Free';
+  content: "\f3c5";
+  position: relative;
+  top: 0px;
+  font-size: 11px;
+  left: -5px;
 }
 .usr-info{
-  width:100%;
   margin: 10px 0 0;
   text-align: center;
   cursor:default;
-  max-height: 40px;
-  overflow: hidden;
+  width:100%;
 }
 .usr-contacts .btn-default,
 .usr-contacts .btn-primary{
@@ -195,13 +205,13 @@ section.usr-contacts{
   cursor:default;
 }
 .online:before{
-  font-family:  'Font Awesome\ 5 Free';
-  content:"\f111";
-  position:absolute;
-  top:-1px;
-  font-size:6px;
-  left:-15px;
-  color:#89c34b;
+  font-family: 'Font Awesome\ 5 Free';
+  content: "\f111";
+  position: relative;
+  top: -2px;
+  font-size: 5px;
+  left: -5px;
+  color: #89c34b;
   animation: pulse 1s infinite;
 }
 @keyframes pulse {
